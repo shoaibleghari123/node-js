@@ -1,16 +1,11 @@
 const { log } = require('console')
-const path = require('path')
+const { readFileSync, writeFileSync } = require('fs')
 
-console.log(path.sep)
+const first = readFileSync('./content/first.txt', 'utf8')
+const second = readFileSync('./content/second.txt', 'utf8')
 
-const filePath = path.join('/content', 'subfolder', 'test.txt')
-
-log(filePath)
-
-const base = path.basename(filePath)
-
-log(base)
-
-const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt')
-
-log(absolute)
+writeFileSync(
+  './content/result-sync',
+  `Here is the result : ${first}, ${second}`,
+  { flag: 'a' }
+)
