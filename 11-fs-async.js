@@ -1,6 +1,6 @@
 const { log } = require('console')
 const { readFile, writeFile, write } = require('fs')
-
+console.log('start')
 readFile('./content/first.txt', 'utf8', (err, result) => {
   if (err) {
     log(err)
@@ -21,8 +21,9 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
           log(err)
           return
         }
-        log(result)
-      }
-    )
+        log('done with this task')
+      })
   })
 })
+
+console.log('starting the next task')
