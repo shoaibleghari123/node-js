@@ -1,19 +1,18 @@
-const http = require('http')
+//npm --version
 
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    res.end('Welcome to our home page')
-  }
+//local dependancy - use it only in this particular project
+//npm i <packageName>
 
-  if (req.url === '/about') {
-    res.end('Here is our short history')
-  }
+//global dependancy - use it in any project
+//npm install -g <packageName>
 
-  res.end(`
-   <h1>Oops!</h1>
-   <p>We can't seem to find the page you are looking for</p>
-   <a href="/">back home</a>
-   `)
-})
+//package.json file - manifest file (store important info about the project/package)
+//manual approach (create package.json in the root, create properties etc)
+//npm init (step by step. press enter to skip)
+//npm init -y (everything default)
 
-server.listen(5000)
+const _ = require('lodash')
+
+const items = [1, [2, [3, [4, [5]]]]]
+const item = _.flattenDeep(items)
+console.log(item)
